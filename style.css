@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#input{
+    width: 750px;
+    padding: 1rem;
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    background-color: #e5e5e5;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+#input::placeholder{
+    font-size: 1.1rem;
+    color: #b5b5b5;
+}
+
+#status{
+    position: relative;
+    margin-top: -.4rem;
+    width: 758px;
+    padding: 1rem;
+    font-weight: bold;
+    border-bottom: 3px solid #f5f5f5;
+    color: #b5b5b5;
+}
+
+#status #clear-completed{
+    position: absolute;
+    right: 1rem;
+}
+
+#clear-completed:hover{
+    color: red;
+    cursor: pointer;
+}
+
+
+#complete-all-tasks:hover{
+    color: rgb(71, 71, 238);
+    cursor: pointer;
+}
+
+footer{
+    position: absolute;
+    bottom: .5rem;
+    width: 758px;
+    padding: 1rem;
+    border-top: 3px solid #f5f5f5;
+    color: #b5b5b5;
+    font-weight: bold;
+}
+
+#completed{
+    position: relative;
+    left: 29.5rem;
+}
+#uncompleted{
+    position: relative;
+    left: 28.5rem;
+}
+
+#all{
+    position: relative;
+    left: 27rem;
+}
+
+#input-container{
+    width: 760px;
+}
+.todos{
+    font-size: 1.3rem;
+    margin: 2px;
+    padding: 1rem 2rem;
+    background-color: #f5f5f5;
+    transition: all .5s ease-in-out;
+}
+.remove{
+    position: absolute;
+    right: 2rem;
+}
+
+.remaining-todo{
+    color: black;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: #a3a2a2;
+}

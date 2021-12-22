@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <form id="form">
+      <input type="text" placeholder="Enter Your Todos......." autocomplete="off" id="input" />
+    </form>
+    <div id="status">
+      <span id="complete-all-tasks"
+        ><span><i class="fas fa-check-double"></i></span> Complete all
+        tasks</span
+      >
+      <span id="clear-completed">Clear completed</span>
+    </div>
+    <div id="input-container">    </div>
+
+    <footer>
+      <span id="task-left"> <span class="remaining-todo">0</span> task left </span>
+      <span id="all">All</span>
+      <span id="uncompleted">Uncompleted</span>
+      <span id="completed">Compeleted</span>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
