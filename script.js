@@ -9,6 +9,14 @@ const uncompleted = document.getElementById('uncompleted')
 const completed = document.getElementById('completed')
 
 
+const lsTodos = JSON.parse(localStorage.getItem("todos"));
+
+if(lsTodos){
+    lsTodos.forEach(todo => {
+      addTodos(todo)
+    })
+}
+
 function insertTodos(e){
     e.preventDefault();
     addTodos()
@@ -16,16 +24,25 @@ function insertTodos(e){
 }
 
 
-function removetodo(todoEl){
+function removetodo(e, todoEl){
     todoEl.remove();
 }
 
 
-function addTodos(){
-    const todosVal = input.value;
+function addTodos(todo){
+    let todosVal = input.value;
+    const todoEl = document.createElement('div');
+
+    
+    if(todo){
+        todosVal = todo.text;
+    }
+    if(todo && todo.completed){
+        todoEl.classList.add('completed');
+    }
+    
 
     if(todosVal){
-        const todoEl = document.createElement('div');
         todoEl.classList.add("todos");
         todoEl.innerHTML = `
         ${todosVal}
@@ -39,12 +56,14 @@ function addTodos(){
         const removeTodoBtn = todoEl.querySelector('.remove'); 
         console.log(removeTodoBtn)  
        
-        removeTodoBtn.addEventListener('click', () => removetodo(todoEl) );
+        removeTodoBtn.addEventListener('click', (e) => removetodo(e, todoEl) );
+
         todoEl.addEventListener('click',() => {
             todoEl.classList.toggle('completed');
             updateLs();
         });
-        
+
+
     }
     updateLs()
 }
@@ -61,7 +80,6 @@ function updateLs(){
             completed : todosEl.classList.contains('completed')
         });
     });
-    console.log("normal" , todos);
     localStorage.setItem("todos", JSON.stringify(todos));
 
     console.log(localStorage)
